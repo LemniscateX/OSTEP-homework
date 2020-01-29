@@ -136,7 +136,7 @@ Nothing goes wrong in the first case, but valgrind gives hints of the error mess
 ```
 This means that we shouldn't access address 0x522d1d0, which is after the allocated 400 bytes.
 
-#### Question 6
+## Question 6
 #### Create a program that allocates an array of integers (as above), frees them, and then tries to print the value of one of the elements of the array. Does the program run? What happens when you use `valgrind` on it?
 
 Nothing goes wrong in the first case, but valgrind gives hints of the error message:
@@ -169,7 +169,7 @@ Nothing goes wrong in the first case, but valgrind gives hints of the error mess
 ```
 This means that we shouldn't access address 0x522d108, which is inside the freed 400 bytes.
 
-#### Question 7
+## Question 7
 #### Now pass a funny value to free (e.g., a pointer in the middle of the array you allocated above). What happens? Do you need tools to find this type of problem?
 
 An error would be reported as follows. We don't need tools to find the problem.
@@ -178,10 +178,10 @@ free(): invalid pointer
 [1]    1166 abort (core dumped)  ./main
 ```
 
-#### Question 8
+## Question 8
 #### Try out some of the other interfaces to memory allocation. For example, create a simple vector-like data structure and related routines that use `realloc()` to manage the vector. Use an array to store the vectors elements; when a user adds an entry to the vector, use `realloc()` to allocate more space for it. How well does such a vector perform? How does it compare to a linked list? Use `valgrind` to help you find bugs.
 
 TODO
 
-#### Question 9
+## Question 9
 #### Spend more time and read about using `gdb` and `valgrind`. Knowing your tools is critical; spend the time and learn how to become an expert debugger in the UNIX and C environment.
